@@ -21,7 +21,7 @@ fn get_image(file: &str, scale: u32) {
                     let pixel = image.get_pixel(x, y);
                     let mut intensity = pixel[0] / 3 + pixel[1] / 3 + pixel[2] / 3;
 
-                    // if the value is transparent make it 0
+                    // if the value of the A chnl is 0 (transparent) then make the intensity 0
                     if pixel[3] == 0 {
                         intensity = 0;
                     }
